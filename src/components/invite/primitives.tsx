@@ -2,13 +2,9 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 
 import { cn } from '@/lib/utils'
 
-/** Serve originals through the Netlify Image CDN at a sensible width. */
 export function cdn(path: string, width: number) {
-  if (import.meta.env.DEV) return path
-
-  return `/.netlify/images?url=${encodeURIComponent(path)}&w=${width}&fm=webp&q=80`
+  return path
 }
-
 /** Fades children in when they scroll into view. */
 export function Reveal({
   children,
